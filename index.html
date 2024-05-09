@@ -1,207 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
-  <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <title>1329 Sabal Palm Dr</title>
-  <link rel="icon" type="image/x-icon" href="homeIcon.png" />
+  <meta charset="UTF-8" />
+  <title>Real Estate Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Source Sans Pro', verdana, sans-serif;
-      text-align: center;
+      font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-
+    .banner-image {
+      height: 500px;
+      background-image: url("webBanner.png");
+      background-size: cover;
+      background-position: center;
     }
 
-    .fade-in {
-      animation: fadeIn ease 3s;
-      -webkit-animation: fadeIn ease 3s;
-      -moz-animation: fadeIn ease 3s;
-      -o-animation: fadeIn ease 3s;
-      -ms-animation: fadeIn ease 3s;
+    .banner-address {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px;
+      color: #fff;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 28px;
     }
 
-@keyframes fadeIn{
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-ms-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-    
-    .header {
-      padding: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      gap: 4rem;
+    .banner-nav {
+      position: absolute;
+      top: 20px;
+      right: 120px;
+      display: flex;
+      gap: 20px;
     }
 
-    .header-title {
-      font-size: 3rem;
-      color: inherit;
-      text-decoration:inherit;
-      margin-bottom: 2rem;
+    .banner-nav-link {
+      padding: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
     }
 
-    .header-nav {
+    .banner-status {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: #008000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .amenities-container {
       display: flex;
       justify-content: center;
-      margin-top: 2rem;
-      gap: 2rem;
+      align-items: center;
+      gap: 20px;
+      padding: 0px;
+      background-color: #f5f5f5;
     }
 
-    .header-nav-link {
-      font-size: 1.2rem;
-      text-decoration: none;
-      color: #000;
-    }
-
-    .header-nav-link:hover {
-      color: #FFA035;
-    }
-
-    .header-image {
-      margin: 0 auto;
-      max-width: 100%;
-      max-height: 30rem;
-      margin-bottom: 2rem;
-      border-radius: 4rem;
-    }
-
-    .status-image {
-      margin: 0 auto;
-      max-width: 100%;
-      max-height: 1.3rem;
-      margin-bottom: .2rem;
-      border-radius: 1rem;
-    }
-
-      .icon-image {
-      max-width: 100%;
-      max-height: 1.2rem;
-    }
-
-    .main {
-      display: grid;
-      margin-top: 0.1rem;
-    }
-
-    .main-section {
-      background-color: #fff;
-    }
-
-    .main-section-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    .main-section-content {
-      font-size: 1.2rem;
-      line-height: 1.5rem;
-      padding: .3rem;
-    }
-
-    .main-section-list {
-      list-style-type: none;
-      padding: 0;
+    .amenity-item {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
-    .main-section-list-item {
-      font-size: 1.2rem;
-      line-height: 1.5rem;
+    .amenity-icon {
+      font-size: 24px;
     }
 
-    .footer {
-      padding: 2rem;
-      margin-top: 2rem;
+    .amenity-text {
+      font-size: 16px;
     }
 
-    .footer-text {
-      font-size: 1.2rem;
+    .description-container {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .description-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .description-text {
+      font-size: 16px;
+    }
+
+    .social-links-container {
+      position: absolute;
+      top: 450px;
+      right: 20px;
+      display: flex;
+      gap: 20px;
+      background-color:#ffffffc9;
+      padding: .2rem;
+      border-radius: .7rem;
+    }
+
+    .social-link {
+      padding: 0px;
+      background-color: #ffffff00;
+      color: #000;
+      border-radius: .5rem;
+      max-width: 2.3rem;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .button {
+      padding: 10px;
+      background-color: #4b6096;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5px;
+      width: 15rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-        <a href="/" class="header-title">1329 Sabal Palm Dr</a> </br>
-        <a href="/" style="font-size: 1.2rem" class="header-title">Gulf Breeze, FL 32563</a>
+  <div class="banner-image">
+    <div class="banner-address">
+        <a>1329 Sabal Palm Dr </a></br>
+        <a style="font-size: 1.2rem">Gulf Breeze, FL 32563</a>
     </div>
-    <div>
-        <img src="bannerActive.png" alt="status" class="status-image" />
-    </div>
-    <div class="fade-in">
-        <img src="webBanner.png" alt="banner" class="header-image" />
-    </div>
-    <div class="main">
-      <div class="main-section">
-        <div class="main-section-title">Useful Web Links</div>
-        <div class="main-section-content">
-              <img src="zillow.svg" alt="zillow" class="icon-image" />
-              <a href="https://www.zillow.com/homes/1329-Sabal-Palm-Dr-Gulf-Breeze,-FL-32563_rb/247474084_zpid/" class="header-nav-link">Zillow</a>
-        </div>
-        <div class="main-section-content">
-              <img src="Realtor.com_2015_icon.svg" alt="realtor.com" class="icon-image" />
-              <a href="https://www.realtor.com/realestateandhomes-detail/M5597317056" class="header-nav-link">Realtor.com</a>
-        </div>
-        <div class="main-section-content">
-              <img src="gmaps.png" alt="gmaps" class="icon-image" />
-              <a href="https://www.google.com/maps/place/1329+Sabal+Palm+Dr,+Gulf+Breeze,+FL+32563/data=!4m2!3m1!1s0x8890db714f9da88b:0x3ca843a638c90163?sa=X&ved=1t:242&hl=en&ictx=111" class="header-nav-link">Google Maps</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="footer-text">Copyright © 2023. All Rights Reserved.</div>
+    <div class="banner-status">For Sale</div>
+    <div class="social-links-container">
+      <a href="#" class="social-link">
+        <image src="Realtor.com_2015_icon.svg" class="social-link" />
+      </a>
+      <a href="#" class="social-link">
+        <image src="zillow.svg" style="max-width: 2rem" class="social-link" />
+      </a>
+      <a href="#" class="social-link">
+        <image src="gmaps.png" class="social-link" />
+      </a>
     </div>
   </div>
-</body>
+  <div class="button-container">
+    <a href="#" class="button">Gallery</a>
+    <a href="#" class="button">3D Walkthrough</a>
+    <a href="#" class="button">Contact</a>
+  </div>
+  <div class="amenities-container">
+
+    <div class="amenity-item">
+      <i class="fas fa-bed amenity-icon"></i>
+      <span class="amenity-text">4+1 Beds</span>
+    </div>
+    <div class="amenity-item">
+      <i class="fas fa-bath amenity-icon"></i>
+      <span class="amenity-text">3 Baths</span>
+    </div>
+    <div class="amenity-item">
+        <i class="fas fa-arrows-alt amenity-icon"></i>
+        <span class="amenity-text">2491 Sqft</span>
+      </div>
+    <div class="amenity-item">
+      <i class="fas fa-map amentiy-icon"></i>
+      <span class="amenity-text">0.33 Acres</span>
+    </div>
+
+  </div>
+
+  <div class="description-container">
+    <div class="description-title">Description</div>
+    <div class="description-text">
+      This beautiful 3-bedroom, 2-bathroom home is located in the heart of Anytown, CA. The home features a 2-car garage, high-speed internet and cable, and a smart TV. The home is also close to shopping, dining, and entertainment.
+    </div>
+  </div>
+    </body>
 
 </html>
